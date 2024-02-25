@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .main{
+            display: flex;
+            width: 100vw;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .box1{
+            display: flex;
+            background-color: blueviolet;
+            width: 25%;
+            align-items: center;
+        }
+        .box2{
+            display: flex;
+            background-color: yellow;
+            width: 25%;
+            flex-direction: column;
+        }
+        .box3{
+            display: flex;
+            background-color: red;
+            width: 25%;
+            align-items: end;
+        }
+        .box4{
+            display: flex;
+            background-color: chocolate;
+            width: 25%;
+            align-items: end;
+            flex-direction: column;
+        }
+        .box5{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            margin: 5px;
+            align-items: center;
+            overflow-x: scroll;
+            visibility: hidden;
+        }
+        .button{
+            display: flex;
+            flex-direction: column;
+            margin: 5px;
+            background: #E6E6E6 0% 0% no-repeat padding-box;
+            border-radius: 18px;
+            opacity: 1;
+            width: 86px;
+            height: 35px;
+            top: 619px;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box1">Box 1</div>
+        <div class="box2">
+            <div class="box2-1">Box 2 - 1</div>
+            <div class="box2-2">Box 2 - 2</div>
+        </div>
+        <div class="box3">Box 3</div>
+        <div class="box4"><a href="#" id="mostrar">Box 4</a></div>
+        <div class="box5">
+            <a class="button" href="">Factura</a>
+            <a class="button" href="">Acuse</a>
+            <a class="button" href="">Mercancía</a>
+            <a class="button" href="">Rechazo</a>
+            <a class="button" href="">Aceptación</a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script>
+        var x = false;
+        $("#mostrar").click(function(){
+            if($(".box5").css("visibility") == "hidden"){
+                $(".box5").css("visibility", "visible");
+            }else{
+                $(".box5").css("visibility", "hidden");
+            }
+            
+        });
+    </script>
+</body>
+</html>
